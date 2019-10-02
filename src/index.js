@@ -8,7 +8,11 @@ module.exports = function getTimeForEducation(
     focus = 'family', 
     knowsProgramming = true,
     config = {family: 4}
-    ) {
-      return 0;
-  };
-  
+  ) {
+      if (knowsProgramming == true) { // вся загвоздка была в задании, а именно то, что неподготовленному человеку нужно 1300ч. Цифры в обьекте конфиг, это часы в неделю
+        return Math.ceil(800 / config[focus]);
+      } else {
+        return Math.ceil(1300 / config[focus]);
+      };
+  };   
+ 
